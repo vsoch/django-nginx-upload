@@ -1,0 +1,23 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dinosaur Nginx Upload Module</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="nginx upload module example with django" />
+    <meta name="keywords" content="django, nginx" />
+    <meta name="author" content="vsoch" />
+
+    <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'>
+    <link rel="icon" type="image/ico" href="/static/img/favicon.ico"/>
+    <link rel="stylesheet" href="{% static "css/style.css" %}" media="screen" type="text/css">
+</head>
+
+<body>
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>

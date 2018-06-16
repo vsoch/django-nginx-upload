@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<a href="/"><i class="fa fa-2x fa-home" style="margin:20px;color:white"></i></a>
+<div class="container" style="width:100%; left:10px">
+<form class="form">
+    <table id="table" class="table table-striped">
+    <thead>
+        <tr>
+            <td>Image</td>
+            <td>Size</td>
+            <td>md5</td>
+        </tr></thead>
+    <tbody>
+     {% for image in uploads %}
+        <tr>
+            <td><a style="text-decoration:none; color:lawngreen; font-weight:500" 
+                   href="/images/{{ image.filename }}">{{ image.filename }}</a></td>
+            <td>{{ image.size }} bytes</td>
+            <td>{{ image.version }}</td>
+        </tr>
+     {% endfor %}
+     </tbody></table>
+</div>
+</form>
+</div>  
+{% endblock %}

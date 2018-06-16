@@ -1,0 +1,32 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<a href="/table"><i class="fa fa-2x fa-table" style="margin:20px;color:white"></i></a>
+<div class="container">
+<form class="form" name="upload" method="POST" enctype="multipart/form-data" action="/upload">
+
+    {% csrf_token %}
+
+    <div class="zone">
+        <div id="dropZ">
+            <i id="cloud" class="fa fa-cloud-upload"></i>
+            <div>Drag and drop your file here, or click to upload</div>                    
+            <div class="selectFile">       
+                <label for="file">Select file</label>                   
+                <input type="file" name="file1" id="file">
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="terminal" value="no">
+
+    {% csrf_token %}
+    <input type="submit" value="Upload" style='display:none'>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="{% static "js/selector.js" %}"></script>
+
+</form>  
+</div>
+{% endblock %}
