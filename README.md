@@ -112,4 +112,4 @@ If you deploy this, there are some customizations you need to take into account!
  - **Authentication** is removed for this demo. You should add it back. You can add this at the level of the nginx module, or via a view for the application.
  - **https** of course this should be served with https. The server block is largely the same, but you would have another for port 443.
 
-If you have any questions or need help, please don't be afraid to [reach out](https://www.github.com/vsoch/nginx-upload-module/issues). I hope that this is helpful for you!
+My preference for a lot of these scaled problems is to "outsource" to another service (e.g., use Google Storage and their APIs) but given that we still need to deploy local modular applications on our own filesystems, this seems like a reasonable solution. If you have any questions or need help, please don't be afraid to [reach out](https://www.github.com/vsoch/django-nginx-upload/issues). I hope that this is helpful for you!
