@@ -6,6 +6,9 @@ deployment with docker compose.
 
 ![img/upload.png](img/upload.png)
 
+If this work is useful to you, please reference the DOI
+
+[![DOI](https://zenodo.org/badge/137612664.svg)](https://zenodo.org/badge/latestdoi/137612664)
 
 ## Rationale
 I am creating this toy example after much frustration trying to implement (something) that would be able to handle uploads of [Singularity](https://singularityware.github.io) containers. Specifically, 
