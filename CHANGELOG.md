@@ -13,7 +13,7 @@ and **Merged pull requests**. Critical items to know are:
 
 The versions coincide with releases on Github.
 
-## [0.0.x](https://github.com/singularityhub/sregistry-cli/tree/master) (0.0.x)
+## [0.0.x](https://github.com/vsoch/django-nginx-upload/tree/master) (0.0.x)
  - updating nginx version  (0.0.11)
  - initial release (first verison released)  (0.0.10)
 
