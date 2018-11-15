@@ -1,0 +1,303 @@
+body {
+  /* bwaaahahha this color... */
+  background: darkmagenta;
+}
+
+/* Table */
+
+table {
+    font-family: 'Roboto', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+  color: white;
+}
+
+thead td {
+  color: #6e006c;
+}
+
+th, td {
+  font-family: 'Roboto', sans-serif;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #F7F7F7;
+}
+thead tr td {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 100%;
+}
+.tbtitle {
+  font-family: 'Roboto', sans-serif;
+  color:white;
+}
+
+/* File Upload */
+
+.zone {
+  margin: auto;
+  border: 5px dashed white;
+  text-align: center;
+  background-color: #d3a5dc9c;
+  color: white;
+  z-index: 20;
+  padding: 20px;
+  transition: all 0.3s ease-out;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
+}
+.zone .btnCompression .active {
+  background: #EB6A5A;
+  color: white;
+}
+.zone i {
+  text-align: center;
+  font-size: 10em;
+  color: #fff;
+  margin-top: 50px;
+}
+.zone .selectFile {
+  height: 50px;
+  margin: 20px auto;
+  position: relative;
+  width: 200px;
+}
+.zone label,
+.zone input {
+  cursor: pointer;
+  display: block;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  border-radius: 5px;
+}
+.zone label {
+  background: #fff;
+  font-family: 'Roboto', sans-serif;
+  color: #EB6A5A;
+  display: inline-block;
+  font-size: 1.2em;
+  line-height: 50px;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 400;
+  box-shadow: 0 1px 1px gray;
+}
+.zone input[type=file] {
+  opacity: 0;
+}
+.zone.in {
+  color: white;
+  border-color: white;
+  background: radial-gradient(ellipse at center, #EB6A5A 0, #c9402f 100%);
+}
+.zone.in i {
+  color: #fff;
+}
+.zone.in label {
+  background: #fff;
+  color: #EB6A5A;
+}
+.zone.hover {
+  color: gray;
+  border-color: white;
+  background: #fff;
+  border: 5px dashed gray;
+}
+.zone.hover i {
+  color: #EB6A5A;
+}
+.zone.hover label {
+  background: #fff;
+  color: #EB6A5A;
+}
+.zone.fade {
+  transition: all 0.3s ease-out;
+  opacity: 1;
+}
+
+#cloud {
+  cursor: pointer;
+}
+
+.container {
+  width: 650px;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  padding: 60px;
+  top: 100px;
+  left: calc(50% - 325px);
+  box-shadow: -10px 10px 40px 0px rgba(0, 0, 0, 0.3);
+  background-color: mediumorchid;
+  border-radius: 20px;
+}
+
+.label, .form input, .form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  outline-style: none;
+  outline-color: transparent;
+  background-color: transparent;
+  fill: transparent;
+  border: none;
+  margin: 0;
+}
+
+@-webkit-keyframes autofill {
+  to {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 300;
+    background: transparent;
+  }
+}
+
+.form input:-webkit-autofill,
+.form textarea:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+.form input::-webkit-input-placeholder,
+.form textarea::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+}
+.form input:-moz-placeholder,
+.form textarea:-moz-placeholder {
+  color: rgba(255, 255, 255, 1);
+  opacity: 1;
+  font-weight: 400;
+}
+.form input::-moz-placeholder,
+.form textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 1);
+  opacity: 1;
+  font-weight: 400;
+}
+.form input:-ms-input-placeholder,
+.form textarea:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+}
+.form input::-ms-input-placeholder,
+.form textarea::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+}
+
+.form input {
+  height: 50px;
+}
+
+.form textarea {
+  min-height: 50px;
+  max-height: 300px;
+  height: auto;
+  display: inline-block;
+  resize: none;
+  padding: 10px 0;
+}
+
+.form input[type="submit"] {
+  width: auto;
+  padding: 0 40px;
+  margin: 40px 0 0 0;
+  font-weight: 400;
+  box-shadow: inset 0 0 0 2px rgba(255 ,255 ,255 , 1);
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.form input[type="submit"]:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(105, 60, 150, 1);
+  transition: all 0.2s ease-in-out;
+}
+
+.form input[type="submit"]:focus {
+  box-shadow: inset 0 0 0 2px rgba(255 ,255 ,255 , 1), 0 0 10px 0 rgba(255 ,255 ,255 , 0.4);
+}
+
+.form label {
+  display: block;
+  position: absolute;
+  top: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  z-index: -1;
+}
+
+.form input,
+.form textarea {
+  margin: 20px 0 0 0;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 1);
+  box-shadow: inset 0 -2px 0 0 rgba(230 ,190 ,50 , 1);
+}
+
+.field {
+  position: relative;
+}
+
+.field input[type="text"]:focus ~ label,
+.field input[type="email"]:focus ~ label,
+.field textarea:focus ~ label,
+.field input[type="text"]:valid ~ label,
+.field input[type="email"]:valid ~ label,
+.field textarea:valid ~ label,
+.field input:not([value=""]) ~ label,
+.field textarea:not([value=""]) ~ label {
+  top: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  z-index: 1;
+  transition: all 0.2s ease-in-out, color 0s;
+}
+
+.field input[type="text"]:focus ~ label,
+.field input[type="email"]:focus ~ label,
+.field textarea:focus ~ label {
+  color: rgba(255, 255, 255, 1);
+}
+
+.field input[type="text"]:valid ~ label,
+.field input[type="email"]:valid ~ label,
+.field textarea:valid ~ label {
+  color: rgba(20, 200, 200, 1);
+}
+
+.field input[type="text"]:not(:focus):invalid ~ label,
+.field input[type="email"]:not(:focus):invalid ~ label,
+.field textarea:not(:focus):invalid ~ label {
+  color: rgba(230 ,190 ,50 , 1);
+  transition: all 0.2s ease-in-out;
+}
+
+.field input:focus,
+.field textarea:focus {
+  box-shadow: inset 0 -2px 0 0 rgba(255 ,255 ,255 , 1);
+  transition: all 0.2s ease-in-out;
+}
+
+.field input:valid,
+.field textarea:valid {
+  box-shadow: inset 0 -2px 0 0 rgba(20, 200, 200, 1);
+  transition: all 0.2s ease-in-out;
+}
+
+.field input[value=""]:not(:focus):invalid,
+.field textarea[value=""]:not(:focus):invalid {
+  box-shadow: inset 0 -2px 0 0 rgba(255 ,255 ,255 , 0.6);
+  transition: all 0.2s ease-in-out;
+}
