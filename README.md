@@ -32,6 +32,7 @@ see how I stumbled trying to find the best approach. I was so determined to make
 
 
 ### Chunked Upload
+
 The idea of a chunked upload speaks for itself - you break a file into chunks, and upload them separately instead of the entire thing in one go. This module to implement chunked uploading for Django worked beautifully in the browser, and if you need a good "out of the box" module this is a good approach. It was very easy for me to plug the uploader into a pretty progress bar, and my result looked like this:
 
 ![img/progress.png](img/progress.png)
@@ -56,6 +57,12 @@ To bring up the server:
 
 ```bash
 docker-compose up -d
+```
+
+Then you need to create the nginx subfolders (this folder is bound to both containers):
+
+```bash
+sudo mkdir -p images/_upload/{0..9} && sudo chmod 777 -R images/_upload
 ```
 
 Then to upload, you can use either the web interface or a command line utility [push.py](push.py)

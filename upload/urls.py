@@ -24,12 +24,12 @@ from django.urls import path, re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^complete?/$', views.upload_complete, name='upload_complete'),
+    re_path(r'^complete/?$', views.upload_complete, name='upload_complete'),
     path('robots\.txt/',TemplateView.as_view(template_name='main/robots.txt', 
                                                content_type='text/plain')),
 
     re_path(r'^$', views.UploadView.as_view(), name="index"),
-    re_path(r'^table?/$', views.TableView.as_view(), name="table"),
+    re_path(r'^table/?$', views.TableView.as_view(), name="table"),
 
 ]
 

@@ -14,6 +14,7 @@ and **Merged pull requests**. Critical items to know are:
 The versions coincide with releases on Github.
 
 ## [0.0.x](https://github.com/vsoch/django-nginx-upload/tree/master) (0.0.x)
+ - fixing urls to have correct slash parsing, adding instruction to README (0.0.12)
  - updating nginx version  (0.0.11)
  - initial release (first verison released)  (0.0.10)
 
