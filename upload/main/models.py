@@ -1,6 +1,6 @@
-'''
+"""
 
-Copyright (C) 2018 Vanessa Sochat.
+Copyright (C) 2018-2021 Vanessa Sochat.
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU Affero General Public License as published by
@@ -15,44 +15,40 @@ License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-'''
+"""
 
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 from django.db import models
-import uuid
 import time
 import hashlib
 import os
 
 
-
 ################################################################################
 # Storage
 
+
 def get_upload_to(instance, filename):
-    filename = os.path.join(settings.UPLOAD_PATH, instance.upload_id + '.simg')
+    filename = os.path.join(settings.UPLOAD_PATH, instance.upload_id + ".simg")
     return time.strftime(filename)
 
 
 class OverwriteStorage(FileSystemStorage):
-
     def get_available_name(self, name, max_length=None):
         if self.exists(name):
             os.remove(os.path.join(settings.MEDIA_ROOT, name))
         return name
 
 
-
 ################################################################################
-# Models 
-
+# Models
 
 
 class ImageFile(models.Model):
-    ''' a base image upload to hold a file temporarily during upload
-        based off of django-chunked-uploads BaseChunkedUpload model
-    '''
+    """a base image upload to hold a file temporarily during upload
+    based off of django-chunked-uploads BaseChunkedUpload model
+    """
 
     file = models.FileField(upload_to=get_upload_to, storage=OverwriteStorage())
     filename = models.CharField(max_length=255)
@@ -68,17 +64,16 @@ class ImageFile(models.Model):
 
     @property
     def md5(self):
-        '''calculate the md5 sum of the file'''
-        if getattr(self, '_md5', None) is None:
+        """calculate the md5 sum of the file"""
+        if getattr(self, "_md5", None) is None:
             md5 = hashlib.md5()
             for chunk in self.file.chunks():
                 md5.update(chunk)
             self._md5 = md5.hexdigest()
         return self._md5
 
-
     def delete(self, delete_file=True, *args, **kwargs):
-        '''delete the file and make sure to also delete from storage'''
+        """delete the file and make sure to also delete from storage"""
         if self.file:
             storage, path = self.file.storage, self.file.path
         super(ImageFile, self).delete(*args, **kwargs)
@@ -86,4 +81,4 @@ class ImageFile(models.Model):
             storage.delete(path)
 
     class Meta:
-        app_label = 'main'
+        app_label = "main"
